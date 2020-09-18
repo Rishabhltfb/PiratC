@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 final nameController = TextEditingController();
+final codeController = TextEditingController();
 
 class Home extends StatefulWidget {
   @override
@@ -142,13 +143,79 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Card(
+                  color: Hexcolor('#FFF5FF'),
                   child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("images/code.png"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                     width: MediaQuery.of(context).size.width * 1,
                     height: MediaQuery.of(context).size.height * 0.3,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Enter team ID",
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            "Enter team ID",
+                            style:
+                                TextStyle(fontFamily: 'Gotham', fontSize: 18),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10.0, 0, 10, 0),
+                          child: TextFormField(
+                            controller: codeController,
+                            style: TextStyle(
+                                color: Colors.black, fontFamily: 'Gotham'),
+                            decoration: new InputDecoration(
+                              enabledBorder: new OutlineInputBorder(
+                                  borderSide:
+                                      new BorderSide(color: Colors.black)),
+                              hintStyle: TextStyle(
+                                fontFamily: 'Gotham',
+                                color: Colors.black54,
+                                fontSize: 15,
+                                fontStyle: FontStyle.italic,
+                              ),
+                              labelStyle: TextStyle(
+                                  fontFamily: 'Gotham', color: Colors.white),
+                              hintText: 'Ex: Hr6ka7',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10.0, 15, 10, 10),
+                          child: Text(
+                            "Generate your own code:",
+                            style:
+                                TextStyle(fontFamily: 'Gotham', fontSize: 18),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10.0, 5, 10, 10),
+                          child: RaisedButton(
+                            color: Hexcolor('#FFF5FF'),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Generate",
+                                  style: TextStyle(
+                                      color: Colors.black54,
+                                      fontFamily: 'Gotham'),
+                                )
+                              ],
+                            ),
+                            onPressed: () {
+                              final snackbar =
+                                  SnackBar(content: Text('Code generated!'));
+                              Scaffold.of(context).showSnackBar(snackbar);
+                            },
+                          ),
                         ),
                       ],
                     ),
