@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:piratc/homewidget.dart';
 
 final nameController = TextEditingController();
 final codeController = TextEditingController();
@@ -219,6 +220,43 @@ class _HomeState extends State<Home> {
                         ),
                       ],
                     ),
+                  ),
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
+                        child: RaisedButton(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Let's go",
+                                style: TextStyle(fontFamily: 'Gotham'),
+                              ),
+                            ],
+                          ),
+                          onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return HomeWidget();
+                              },
+                            ),
+                          ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Text(
+                          "By proceeding, you agree all terms and conditions",
+                          style: TextStyle(
+                              fontFamily: 'Gotham',
+                              fontStyle: FontStyle.italic,
+                              color: Colors.black54),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
