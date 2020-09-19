@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import './call.dart';
@@ -31,19 +32,29 @@ class IndexState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.black,
+      backgroundColor: Hexcolor('#FFE8F7'),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        flexibleSpace: Image(
+          image: AssetImage('images/game.png'),
+          fit: BoxFit.cover,
+        ),
+        backgroundColor: Hexcolor('#FFE8F7'),
         title: Text(
-          'StudyRoom',
+          'Call Team',
           style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'Poppins',
+            color: Hexcolor('#5C6178'),
+            fontFamily: 'Gotham',
           ),
         ),
       ),
       body: Center(
         child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/call.png"),
+              fit: BoxFit.contain,
+            ),
+          ),
           padding: const EdgeInsets.symmetric(horizontal: 20),
           height: 400,
           child: Column(
@@ -52,21 +63,21 @@ class IndexState extends State<IndexPage> {
                 children: <Widget>[
                   Expanded(
                       child: TextField(
-                    style:
-                        TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+                    style: TextStyle(
+                        color: Hexcolor('#5C6178'), fontFamily: 'Gotham'),
                     controller: _channelController,
                     decoration: InputDecoration(
-                      labelStyle:
-                          TextStyle(color: Colors.white, fontFamily: 'Poppins'),
-                      hintStyle:
-                          TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+                      labelStyle: TextStyle(
+                          color: Hexcolor('#5C6178'), fontFamily: 'Gotham'),
+                      hintStyle: TextStyle(
+                          color: Hexcolor('#5C6178'), fontFamily: 'Gotham'),
                       errorStyle:
-                          TextStyle(color: Colors.red, fontFamily: 'Poppins'),
+                          TextStyle(color: Colors.red, fontFamily: 'Gotham'),
                       errorText: _validateError ? 'ID is mandatory' : null,
                       border: UnderlineInputBorder(
                         borderSide: BorderSide(width: 1),
                       ),
-                      hintText: 'Enter ID',
+                      hintText: 'Enter Team ID',
                     ),
                   ))
                 ],
@@ -76,9 +87,9 @@ class IndexState extends State<IndexPage> {
                   ListTile(
                     //title: Text(ClientRole.Broadcaster.toString()),
                     title: Text(
-                      "Start Presenting",
-                      style:
-                          TextStyle(fontFamily: 'Poppins', color: Colors.white),
+                      "Start a call",
+                      style: TextStyle(
+                          fontFamily: 'Gotham', color: Hexcolor('#5C6178')),
                     ),
                     leading: Radio(
                       value: ClientRole.Broadcaster,
@@ -94,8 +105,8 @@ class IndexState extends State<IndexPage> {
                     // title: Text(ClientRole.Audience.toString()),
                     title: Text(
                       "Join a meeting",
-                      style:
-                          TextStyle(fontFamily: 'Poppins', color: Colors.white),
+                      style: TextStyle(
+                          fontFamily: 'Gotham', color: Hexcolor('#5C6178')),
                     ),
                     leading: Radio(
                       value: ClientRole.Audience,
@@ -132,7 +143,10 @@ class IndexState extends State<IndexPage> {
                 child: Text(
                   "Kindly contact your administrator for an ID if you are joining as an attendee.",
                   style: TextStyle(
-                      color: Colors.white, fontSize: 14, fontFamily: 'Poppins'),
+                      color: Hexcolor('#5C6178'),
+                      fontSize: 14,
+                      fontStyle: FontStyle.italic,
+                      fontFamily: 'Gotham'),
                 ),
               ),
             ],
