@@ -36,7 +36,7 @@ class _MeetState extends State<Meet> {
 
   _addCube(ArCoreController _arcoreController) {
     final material = ArCoreMaterial(
-      color: Colors.pink,
+      color: Colors.brown,
       metallic: 1,
     );
     final cube = ArCoreCube(
@@ -46,8 +46,8 @@ class _MeetState extends State<Meet> {
     final node = ArCoreNode(
       shape: cube,
       position: vector.Vector3(
-        -0.5,
-        -0.5,
+        -3,
+        -3,
         -3,
       ),
     );
@@ -87,6 +87,7 @@ class _MeetState extends State<Meet> {
         backgroundColor: Colors.white,
         child: Icon(Icons.meeting_room, color: Hexcolor('#5C6178')),
         onPressed: () {
+          Navigator.pop(context);
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => MyApp()),
