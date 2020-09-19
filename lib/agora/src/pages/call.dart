@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 import '../utils/settings.dart';
 
@@ -303,10 +304,11 @@ class _CallPageState extends State<CallPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Hexcolor('#FFDFCA'),
         title: Text(
           'Meeting',
-          style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+          style: TextStyle(color: Colors.black, fontFamily: 'Gotham'),
         ),
       ),
       backgroundColor: Colors.black,
