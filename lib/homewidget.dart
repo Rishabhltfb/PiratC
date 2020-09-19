@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:piratc/mainscreen.dart';
+import 'package:piratc/meet.dart';
 
 class HomeWidget extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class _HomeWidgetState extends State<HomeWidget> {
 
   final List<Widget> _widgetOptions = [
     Main(),
+    AR(),
   ];
 
   Widget build(BuildContext context) {
