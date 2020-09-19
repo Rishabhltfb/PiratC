@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:piratc/home.dart';
+import 'agora/main.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 void main() => runApp(AR());
@@ -73,9 +75,37 @@ class _MeetState extends State<Meet> {
           style: TextStyle(fontFamily: 'Gotham', color: Hexcolor('#5C6178')),
         ),
       ),
-      body: ArCoreView(
-        onArCoreViewCreated: _onArCoreViewCreated,
+      body: InkWell(
+        child: ArCoreView(
+          onArCoreViewCreated: _onArCoreViewCreated,
+        ),
+        onTap: () {
+          _popUpDialog(context);
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white,
+        child: Icon(Icons.meeting_room, color: Hexcolor('#5C6178')),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MyApp()),
+          );
+        },
       ),
     );
   }
+}
+
+void _popUpDialog(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (context) {
+        return Card(
+          child: Text(
+            "Almost got it.",
+            style: TextStyle(fontFamily: 'Gotham'),
+          ),
+        );
+      });
 }
