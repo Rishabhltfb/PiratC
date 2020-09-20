@@ -1,8 +1,8 @@
-#piratc
+# piratc
 
-A new Flutter project.
+A treasure hunt game using ARCore
 
-##Getting Started
+## Getting Started
 
 This project is a starting point for a Flutter application.
 
