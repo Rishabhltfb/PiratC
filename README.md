@@ -1,7 +1,7 @@
 # piratc
 <br>
-<br>
 [![Codemagic build status](https://api.codemagic.io/apps/5f653401ce8cd95e58c8bae8/5f653401ce8cd95e58c8bae7/status_badge.svg)](https://codemagic.io/apps/5f653401ce8cd95e58c8bae8/5f653401ce8cd95e58c8bae7/latest_build)
+<br>
 A treasure hunt game using ARCore
 
 ## Getting Started
